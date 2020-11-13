@@ -5,13 +5,16 @@ import java.util.Scanner;
 
 public class main {
 
-    public static void  main (String[] args){
+    public static void  main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        int year;
+        int year = 0;
         do {
             System.out.print("Enter a year greater than or equal to 1582: ");
-            year = sc.nextInt();
+            if (sc.hasNextInt())
+                year = sc.nextInt();
+            else
+                sc.nextLine();
         } while (year < 1582);
 
         if (isLeapYear(year))
